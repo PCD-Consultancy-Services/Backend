@@ -26,9 +26,10 @@ Install the project’s required npm packages:
 npm install
 
 
-### 4. Create a .env File
-In the project root, create a .env file and populate it with the following environment variables:
+### 4. Create a `.env` File
+In the project root, create a `.env` file and populate it with the following environment variables:
 
+```env
 # Environment
 NODE_ENV=production
 
@@ -59,7 +60,5 @@ JWT_DEFAULT_EXPIRATION=7200
 JWT_ACCESS_EXPIRATION="2h"
 JWT_REFRESH_EXPIRATION="8h"
 JWT_RESET_PASSWORD_EXPIRATION="15m"
-
-
-
+```
 ### 5. Setup MongoDB
