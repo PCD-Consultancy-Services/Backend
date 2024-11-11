@@ -1,0 +1,16 @@
+module.exports.userControllers = require("./user.controllers");
+module.exports.authControllers = require("./auth.controllers");
+module.exports.roleControllers = require("./role.controllers");
+module.exports.permissionControllers = require("./permission.controllers");
+module.exports.classificationControllers = require("./classification.controllers");
+module.exports.tankControllers = require("./tank.controllers");
+module.exports.chemicalControllers = require("./chemical.controllers");
+module.exports.serviceControllers = require("./service.controllers");
+module.exports.customerControllers = require("./customer.controllers");
+module.exports.machineControllers = require("./machine.controllers");
+module.exports.qualityControllers = require("./quality.controllers");
+module.exports.masterTemplateControllers = require("./master-template.controllers");
+module.exports.shadeControllers = require("./shade.controllers");
+module.exports.recipeControllers = require("./recipe.controllers");
+module.exports.scheduleControllers = require("./schedule.controllers");
+module.exports.dispensingControllers = require("./dispensing.controllers");

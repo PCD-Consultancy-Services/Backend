@@ -1,0 +1,51 @@
+{
+  "name": "sarlaplcbackend",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "engines": {
+    "node": ">=20.14.0"
+  },
+  "scripts": {
+    "start": "pm2 start src/app.js",
+    "dev": "nodemon src/app.js",
+    "debug": "nodemon src/app.js",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write --ignore-unknown",
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "handlebars": "^4.7.8",
+    "helmet": "^7.1.0",
+    "http-status": "^1.7.4",
+    "joi": "^17.13.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.1",
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.4",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "eslint": "^9.6.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.8.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "3.3.2"
+  }
+}

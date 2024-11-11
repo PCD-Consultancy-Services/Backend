@@ -1,0 +1,40 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/.ae303712f3199fb7cf3d97cb6e8a267b160d2123-audit.json",
+    "files": [
+        {
+            "date": 1726137649421,
+            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/sarla-2024-09-12.log",
+            "hash": "361c3bb26551ce51616f314194ee7530cc445e5d932d20600c594afd1f95b3cb"
+        },
+        {
+            "date": 1726227049088,
+            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/sarla-2024-09-13.log",
+            "hash": "2997d210469f38e711e2459bd93f160589ff9d4dcb277ec8dcbf0b227a90b315"
+        },
+        {
+            "date": 1726475406911,
+            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/sarla-2024-09-16.log",
+            "hash": "c7cf36d5174af9e510031e1e4fdab134abb6200967db4744c06011f9dd5f43a9"
+        },
+        {
+            "date": 1726736577362,
+            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/sarla-2024-09-19.log",
+            "hash": "cc7966ebf611ca4138ad9768ebb79989ab26c1050d613f66f6961cead54ac7e8"
+        },
+        {
+            "date": 1726822946373,
+            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/sarla-2024-09-20.log",
+            "hash": "73347cf9993aa38bd7bf9162493309c7ade434ce8a4abe11caea751322c81aa6"
+        },
+        {
+            "date": 1727176101370,
+            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/sarla-2024-09-24.log",
+            "hash": "a78b494484d97439b1a2a54f6cf757f2bfbeeb04a8aff1c0d8f9ddc5a1260044"
+        }
+    ],
+    "hashType": "sha256"
+}

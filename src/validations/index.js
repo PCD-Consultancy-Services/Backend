@@ -1,0 +1,16 @@
+module.exports.userValidations = require("./user.validations");
+module.exports.authValidations = require("./auth.validations");
+module.exports.roleValidations = require("./role.validations");
+module.exports.permissionValidations = require("./permission.validations");
+module.exports.classificationValidations = require("./classification.validations");
+module.exports.tankValidations = require("./tank.validations");
+module.exports.chemicalValidations = require("./chemical.validations");
+module.exports.serviceValidations = require("./service.validations");
+module.exports.customerValidations = require("./customer.validations");
+module.exports.machineValidations = require("./machine.validations");
+module.exports.qualityValidations = require("./quality.validations");
+module.exports.masterTemplateValidations = require("./master-template.validations");
+module.exports.shadeValidations = require("./shade.validations");
+module.exports.recipeValidations = require("./recipe.validations");
+module.exports.scheduleValidations = require("./schedule.validations");
+module.exports.dispensingValidations = require("./dispensing.validations");

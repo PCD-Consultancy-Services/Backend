@@ -1,0 +1,7 @@
+2024-09-20 14:32:26 [[32minfo[39m] => Req: {"method":"POST","url":"/api/v1/auth/login","ip":"::1","params":{},"query":{},"body":{"email":"superadmin@gmail.com","password":"Admin@1234"}}
+2024-09-20 14:33:36 [[32minfo[39m] => Req: {"method":"GET","url":"/api/v1/quality/search","ip":"::1","params":{},"query":{},"body":{}}
+2024-09-20 14:34:17 [[32minfo[39m] => Req: {"method":"GET","url":"/api/v1/recipe/get/chemical?pageSize=10&page=1","ip":"::1","params":{},"query":{"pageSize":"10","page":"1"},"body":{}}
+2024-09-20 14:42:26 [[32minfo[39m] => Req: {"method":"GET","url":"/api/v1/quality/search","ip":"::1","params":{},"query":{},"body":{}}
+2024-09-20 14:42:32 [[32minfo[39m] => Listening on port 4000
+2024-09-20 14:42:33 [[32minfo[39m] => Pinged your deployment. You successfully connected to Mongodb : ac-ezn01wc-shard-00-01.u7waupw.mongodb.net
+2024-09-20 14:42:36 [[32minfo[39m] => Req: {"method":"GET","url":"/api/v1/quality/search","ip":"::1","params":{},"query":{},"body":{}}

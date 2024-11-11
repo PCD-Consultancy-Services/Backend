@@ -1,0 +1,17 @@
+module.exports.userServices = require("./user.services");
+module.exports.tokenServices = require("./token.services");
+module.exports.rbacServices = require("./rbac.services");
+module.exports.permissionServices = require("./permission.services");
+module.exports.emailServices = require("./email.services");
+module.exports.classificationServices = require("./classification.services");
+module.exports.tankServices = require("./tank.services");
+module.exports.chemicalServices = require("./chemical.services");
+module.exports.serviceServices = require("./service.services");
+module.exports.customerServices = require("./customer.services");
+module.exports.machineServices = require("./machine.services");
+module.exports.qualityServices = require("./quality.services");
+module.exports.masterTemplateServices = require("./master-template.services");
+module.exports.shadeServices = require("./shade.services");
+module.exports.recipeServices = require("./recipe.services");
+module.exports.scheduleServices = require("./schedule.services");
+module.exports.dispensingServices = require("./dispensing.services");
