@@ -155,6 +155,25 @@ const deleteScheduleById = async (id) => {
   const schedule = await Schedule.findByIdAndDelete(id);
   return schedule;
 };
+// const getNewSlipNumber = async (cardbatche) => {
+//   // Fetch all records with the same cardBatche
+//   const schedules = await Schedule.find({ cardBatche: cardbatche }).sort({
+//     slipNumber: -1,
+//   });
+
+//   // If no records found, default to the first slip number
+//   if (!schedules || schedules.length === 0) {
+//     return `${cardbatche}1`;
+//   }
+
+//   // Find the last slip number and extract the numeric part
+//   const lastSlip = schedules[0].slipNumber;
+//   const lastNumber = parseInt(lastSlip.replace(cardbatche, ""), 10);
+
+//   // Increment the number and return the new slip number
+//   const newSlipNumber = `${cardbatche}${lastNumber + 1}`;
+//   return newSlipNumber;
+// };
 const getNewSlipNumber = async (cardbatche) => {
   // Fetch all records with the same cardBatche
   const schedules = await Schedule.find({ cardBatche: cardbatche }).sort({
@@ -163,19 +182,41 @@ const getNewSlipNumber = async (cardbatche) => {
 
   // If no records found, default to the first slip number
   if (!schedules || schedules.length === 0) {
-    return `${cardbatche}1`;
+    return `${cardbatche}00000001`;
   }
 
   // Find the last slip number and extract the numeric part
   const lastSlip = schedules[0].slipNumber;
   const lastNumber = parseInt(lastSlip.replace(cardbatche, ""), 10);
 
-  // Increment the number and return the new slip number
-  const newSlipNumber = `${cardbatche}${lastNumber + 1}`;
+  // Increment the number and pad to 8 digits
+  const newNumber = lastNumber + 1;
+  const paddedNumber = newNumber.toString().padStart(8, "0");
+
+  const newSlipNumber = `${cardbatche}${paddedNumber}`;
   return newSlipNumber;
 };
+const searchMachine = async (filter, options) => {
+  const services = await Machine.find(filter)
+    .populate({
+      path: "serviceId",
+      select: "key name",
+    })
+    .select("name")
+    .sort(options.sort)
+    .skip(options.skip)
+    .limit(options.pageSize)
+    .lean();
 
+  const paginationInfo = await paginateResults(Machine, filter, options);
+
+  return {
+    results: services,
+    ...paginationInfo,
+  };
+};
 module.exports = {
+  searchMachine,
   getMachines,
   getRecipes,
   createSchedule,

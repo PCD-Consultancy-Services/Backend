@@ -147,6 +147,21 @@ const deleteChemical = {
     chemicalId: Joi.string().trim().strict().custom(objectId).required(),
   }),
 };
+
+const searchClassifs = {
+  query: Joi.object({
+    page: Joi.number().integer().min(1).optional(),
+    pageSize: Joi.number().integer().min(1).optional(),
+    q: Joi.string().trim().strict().required().optional(),
+  }),
+};
+const searchTanks = {
+  query: Joi.object({
+    page: Joi.number().integer().min(1).optional(),
+    pageSize: Joi.number().integer().min(1).optional(),
+    q: Joi.string().trim().strict().required().optional(),
+  }),
+};
 module.exports = {
   createChemical,
   getChemicals,
@@ -154,4 +169,6 @@ module.exports = {
   getChemical,
   updateChemical,
   deleteChemical,
+  searchTanks,
+  searchClassifs,
 };

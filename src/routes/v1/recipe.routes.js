@@ -109,5 +109,12 @@ router.delete(
   validateRequest(recipeValidations.deleteChildChemical),
   recipeControllers.deleteChildChemical
 );
-
+router
+  .route("/chemical/search")
+  .get(
+    checkAuth,
+    checkRole(allowedRoles),
+    validateRequest(recipeValidations.searchChemicals),
+    recipeControllers.searchChemicals
+  );
 module.exports = router;

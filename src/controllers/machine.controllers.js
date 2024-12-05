@@ -124,11 +124,34 @@ const deleteMachine = asyncHandler(async (req, res) => {
 
   sendSuccessResponse(httpStatus.OK, res, "Machine deleted successfully.");
 });
+const searchService = asyncHandler(async (req, res) => {
+  let { key, name, page = 1, pageSize = 10 } = req.query;
+  const options = getOffset(page, pageSize);
 
+  let filter = {};
+  if (key || name) {
+    const conditions = [];
+    if (key) {
+      conditions.push({ key: new RegExp(key, "i") });
+    }
+    if (name) {
+      conditions.push({ name: new RegExp(name, "i") });
+    }
+
+    if (conditions.length > 0) {
+      filter = { $or: conditions };
+    }
+  }
+
+  const shades = await machineServices.searchServices(filter, options);
+
+  sendSuccessResponse(httpStatus.OK, res, "Data fetched successfully.", shades);
+});
 module.exports = {
   createMachine,
   getMachines,
   getMachine,
   updateMachine,
   deleteMachine,
+  searchService,
 };

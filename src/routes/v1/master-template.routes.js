@@ -53,5 +53,12 @@ router
     validateRequest(masterTemplateValidations.deleteMasterTemplate),
     masterTemplateControllers.deleteMasterTemplate
   );
-
+router
+  .route("/chemical/search")
+  .get(
+    checkAuth,
+    checkRole(allowedRoles),
+    validateRequest(masterTemplateValidations.searchChemicals),
+    masterTemplateControllers.searchChemicals
+  );
 module.exports = router;

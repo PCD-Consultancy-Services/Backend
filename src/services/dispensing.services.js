@@ -17,6 +17,61 @@ const dispensingSearch = async (filter, options) => {
     ...paginationInfo,
   };
 };
+// const getScheduleById = async (id) => {
+//   const schedule = await Schedule.findById(id)
+//     .populate({
+//       path: "shadeId",
+//       select: ["shadeCode", "color", "_id"],
+//     })
+//     .populate({
+//       path: "qualityId",
+//       select: ["qualityCode", "qualityCodeManual", "_id"],
+//     })
+//     .populate({
+//       path: "customerId",
+//       select: ["name", "custCode", "_id"],
+//     })
+//     .populate({
+//       path: "machineId",
+//       select: [
+//         "name",
+//         "key",
+//         "serviceId",
+//         "nylonKg",
+//         "literage",
+//         "nylonRatio",
+//         "_id",
+//       ],
+//     })
+//     .populate({
+//       path: "recipeId",
+//       select: [
+//         "shadeId",
+//         "qualityId",
+//         "customerId",
+//         "recipeType",
+//         "parentChemicals",
+//         "_id",
+//       ],
+//       populate: [
+//         {
+//           path: "parentChemicals.templateId", // Populating parent chemical
+//           select: ["name", "tankId"],
+//           populate: {
+//             path: "tankId",
+//             select: ["name", "_id"]
+//           }// Selecting the name of the parent chemical
+//         },
+//         {
+//           path: "parentChemicals.childChemicals.chemicalId", // Populating child chemicals
+//           select: ["name", "tankId"], // Selecting the name of the child chemicals
+//         },
+//       ],
+//     })
+//     .lean();
+//   return schedule;
+// };
+
 const getScheduleById = async (id) => {
   const schedule = await Schedule.findById(id)
     .populate({
@@ -55,16 +110,21 @@ const getScheduleById = async (id) => {
       ],
       populate: [
         {
-          path: "parentChemicals.templateId", // Populating parent chemical
-          select: "name", // Selecting the name of the parent chemical
+          path: "parentChemicals.templateId",
+          select: ["name", "_id"],
         },
         {
-          path: "parentChemicals.childChemicals.chemicalId", // Populating child chemicals
-          select: "name", // Selecting the name of the child chemicals
+          path: "parentChemicals.childChemicals.chemicalId",
+          select: ["name", "tankId", "_id"],
+          populate: {
+            path: "tankId",
+            select: ["name", "_id"],
+          },
         },
       ],
     })
     .lean();
+
   return schedule;
 };
 

@@ -1,4 +1,4 @@
-const { Machine } = require("../models");
+const { Machine, Service } = require("../models");
 const { paginateResults } = require("../utils/pagination");
 
 const convertNameToKey = (serviceName) => {
@@ -62,6 +62,22 @@ const deleteMachineById = async (id) => {
   return machine;
 };
 
+const searchServices = async (filter, options) => {
+  const services = await Service.find(filter)
+    .select("key name")
+    .sort(options.sort)
+    .skip(options.skip)
+    .limit(options.pageSize)
+    .lean();
+
+  const paginationInfo = await paginateResults(Service, filter, options);
+
+  return {
+    results: services,
+    ...paginationInfo,
+  };
+};
+
 module.exports = {
   getMachineByName,
   createMachine,
@@ -70,4 +86,5 @@ module.exports = {
   deleteMachineById,
   updateMachineById,
   checkIfMachineExists,
+  searchServices,
 };

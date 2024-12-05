@@ -75,7 +75,17 @@ const checkIfChemicalExists = async (filter) => {
 };
 
 const getChemicalById = async (id) => {
-  const chemical = await Chemical.findById(id).lean();
+  const chemical = await Chemical.findById(id)
+    .populate({
+      path: "classifId",
+      select: "name", // Select only the name field from classification
+    })
+    .populate({
+      path: "tankId",
+      select: "name", // Select only the name field from tank
+    })
+    .lean();
+
   return chemical;
 };
 

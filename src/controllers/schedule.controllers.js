@@ -285,8 +285,26 @@ const getSlipNumber = asyncHandler(async (req, res) => {
     });
   }
 });
+const searchMachines = asyncHandler(async (req, res) => {
+  let { q, page = 1, pageSize = 10 } = req.query;
+  const options = getOffset(page, pageSize);
 
+  let filter = {};
+  if (q) {
+    filter = { name: new RegExp(q, "i") };
+  }
+
+  const chemicals = await scheduleServices.searchMachine(filter, options);
+
+  sendSuccessResponse(
+    httpStatus.OK,
+    res,
+    "Data fetched successfully.",
+    chemicals
+  );
+});
 module.exports = {
+  searchMachines,
   getMachines,
   getCardBatches,
   getRecipes,

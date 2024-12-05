@@ -133,8 +133,15 @@ const deleteChildChemical = {
     childChemicalId: Joi.string().trim().strict().custom(objectId).required(),
   }),
 };
-
+const searchChemicals = {
+  query: Joi.object({
+    page: Joi.number().integer().min(1).optional(),
+    pageSize: Joi.number().integer().min(1).optional(),
+    q: Joi.string().trim().strict().required().optional(),
+  }),
+};
 module.exports = {
+  searchChemicals,
   createRecipe,
   getRecipes,
   getRecipe,

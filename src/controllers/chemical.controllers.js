@@ -251,7 +251,37 @@ const deleteChemical = asyncHandler(async (req, res) => {
 
   sendSuccessResponse(httpStatus.OK, res, "Chemical deleted successfully.");
 });
+const searchTanks = asyncHandler(async (req, res) => {
+  let { q, page = 1, pageSize = 10 } = req.query;
+  const options = getOffset(page, pageSize);
 
+  let filter = {};
+  if (q) {
+    filter = { name: new RegExp(q, "i") };
+  }
+
+  const tanks = await tankServices.searchTanks(filter, options);
+
+  sendSuccessResponse(httpStatus.OK, res, "Data fetched successfully.", tanks);
+});
+const searchClassifs = asyncHandler(async (req, res) => {
+  let { q, page = 1, pageSize = 10 } = req.query;
+  const options = getOffset(page, pageSize);
+
+  let filter = {};
+  if (q) {
+    filter = { name: new RegExp(q, "i") };
+  }
+
+  const classifs = await classificationServices.searchClassifs(filter, options);
+
+  sendSuccessResponse(
+    httpStatus.OK,
+    res,
+    "Data fetched successfully.",
+    classifs
+  );
+});
 module.exports = {
   getChemicalUnits,
   createChemical,
@@ -260,4 +290,6 @@ module.exports = {
   getChemical,
   updateChemical,
   deleteChemical,
+  searchTanks,
+  searchClassifs,
 };

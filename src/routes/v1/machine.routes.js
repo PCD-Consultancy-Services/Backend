@@ -44,5 +44,12 @@ router
     validateRequest(machineValidations.deleteMachine),
     machineControllers.deleteMachine
   );
-
+router
+  .route("/service/search")
+  .get(
+    checkAuth,
+    checkRole(allowedRoles),
+    validateRequest(machineValidations.searchService),
+    machineControllers.searchService
+  );
 module.exports = router;

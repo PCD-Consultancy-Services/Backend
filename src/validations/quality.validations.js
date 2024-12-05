@@ -56,7 +56,7 @@ const createQuality = {
       .strict()
       .valid(...processes)
       .required(),
-    tpm: Joi.number().min(0).max(100).required(),
+    tpm: Joi.number().min(0).required(),
     isLub: Joi.boolean().required(),
     lustre: Joi.string()
       .trim()
@@ -151,7 +151,7 @@ const updateQuality = {
       .strict()
       .valid(...processes)
       .required(),
-    tpm: Joi.number().min(0).max(100).required(),
+    tpm: Joi.number().min(0).required(),
     isLub: Joi.boolean().required(),
     lustre: Joi.string()
       .trim()

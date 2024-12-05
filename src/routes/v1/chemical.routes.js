@@ -4,10 +4,10 @@ const { checkRole } = require("../../middlewares/rbac.middlewares");
 const validateRequest = require("../../middlewares/validation.middlewares");
 const { chemicalValidations } = require("../../validations");
 const { chemicalControllers } = require("../../controllers");
-const { SUPER_ADMIN, MANAGER } = require("../../config/rbac");
+const { SUPER_ADMIN, MANAGER, USER } = require("../../config/rbac");
 const router = express.Router();
 
-const allowedRoles = [SUPER_ADMIN, MANAGER];
+const allowedRoles = [SUPER_ADMIN, MANAGER, USER];
 
 router
   .route("/")
@@ -61,5 +61,21 @@ router
     validateRequest(chemicalValidations.deleteChemical),
     chemicalControllers.deleteChemical
   );
+router
+  .route("/classification/search")
+  .get(
+    checkAuth,
+    checkRole(allowedRoles),
+    validateRequest(chemicalValidations.searchClassifs),
+    chemicalControllers.searchClassifs
+  );
 
+router
+  .route("/tank/search")
+  .get(
+    checkAuth,
+    checkRole(allowedRoles),
+    validateRequest(chemicalValidations.searchTanks),
+    chemicalControllers.searchTanks
+  );
 module.exports = router;

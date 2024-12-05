@@ -71,8 +71,15 @@ const deleteSchedule = {
     scheduleId: Joi.string().trim().strict().custom(objectId).required(),
   }),
 };
-
+const searchMachines = {
+  query: Joi.object({
+    page: Joi.number().integer().min(1).optional(),
+    pageSize: Joi.number().integer().min(1).optional(),
+    q: Joi.string().trim().strict().required().optional(),
+  }),
+};
 module.exports = {
+  searchMachines,
   createSchedule,
   getSchedule,
   getSchedules,

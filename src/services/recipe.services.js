@@ -426,7 +426,21 @@ const deleteChildChemical = async (
 
   return recipe;
 };
+// const searchChemicals = async (filter, options) => {
+//   const services = await Chemical.find(filter)
+//     .select("name")
+//     .sort(options.sort)
+//     .skip(options.skip)
+//     .limit(options.pageSize)
+//     .lean();
 
+//   const paginationInfo = await paginateResults(Chemical, filter, options);
+
+//   return {
+//     results: services,
+//     ...paginationInfo,
+//   };
+// };
 module.exports = {
   isDuplicateRecipe,
   createRecipe,

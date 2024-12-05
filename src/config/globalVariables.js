@@ -1,4 +1,4 @@
-const consumptionUnits = ["GPL"];
+const consumptionUnits = ["GPL", "%"];
 const phUnits = ["PPM"];
 const densityUnits = ["KG"];
 const conductivityUnits = ["MS/CM"];

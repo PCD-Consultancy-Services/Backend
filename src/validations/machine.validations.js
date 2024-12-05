@@ -50,6 +50,14 @@ const deleteMachine = {
     machineId: Joi.string().trim().strict().custom(objectId).required(),
   }),
 };
+const searchService = {
+  query: Joi.object({
+    page: Joi.number().integer().min(1).optional(),
+    pageSize: Joi.number().integer().min(1).optional(),
+    key: Joi.string().trim().strict().required().optional(),
+    name: Joi.string().trim().strict().required().optional(),
+  }),
+};
 
 module.exports = {
   createMachine,
@@ -57,4 +65,5 @@ module.exports = {
   getMachine,
   updateMachine,
   deleteMachine,
+  searchService,
 };

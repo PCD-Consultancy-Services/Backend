@@ -64,4 +64,13 @@ router
     validateRequest(scheduleValidations.deleteSchedule),
     scheduleControllers.deleteSchedule
   );
+
+router
+  .route("/search/machine")
+  .get(
+    checkAuth,
+    checkRole(allowedRoles),
+    validateRequest(scheduleValidations.searchMachines),
+    scheduleControllers.searchMachines
+  );
 module.exports = router;

@@ -6,34 +6,24 @@
     "auditLog": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/.8b83f73c2ddedfbd7ace56f48e03de4c7d3d732b-audit.json",
     "files": [
         {
-            "date": 1726137649428,
-            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/error-sarla-2024-09-12.log",
-            "hash": "409740313143ff857b182542addf1a34fad2be98a88900fe5063ae198a882dd1"
+            "date": 1732786642999,
+            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/error-sarla-2024-11-28.log",
+            "hash": "cceab0e8f4666348fa353b5825399769d496f4dafc7739ddfa402c11c03da19f"
         },
         {
-            "date": 1726228141302,
-            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/error-sarla-2024-09-13.log",
-            "hash": "fee3cebfd16465ae2a4e372bdea30b17acb8d0e511fce4943c499c459be091a6"
+            "date": 1732871112308,
+            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/error-sarla-2024-11-29.log",
+            "hash": "c9a143abfcbcc98a2ca8e028a07f25b04117a77aafa8790e815d00bf2aa4b8d3"
         },
         {
-            "date": 1726475406916,
-            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/error-sarla-2024-09-16.log",
-            "hash": "1464a42ff35cd7097aa4d2a023970a4e73192eaa038af7823f44fde2c9cc74d2"
+            "date": 1733202538517,
+            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/error-sarla-2024-12-03.log",
+            "hash": "50afbf2bc87a3cf79a342142065cf32ba057e8a4db9691ac4e258a4035c16bda"
         },
         {
-            "date": 1726737465551,
-            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/error-sarla-2024-09-19.log",
-            "hash": "dd6c36c6f4d4759d78465d355263fad5d0ca7fc546abb0d98426a93838248f77"
-        },
-        {
-            "date": 1726823552416,
-            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/error-sarla-2024-09-20.log",
-            "hash": "2ba3ac035776162873aec4a9aedafde846425e5e6fe7f68860f7a2f2d9dc3e27"
-        },
-        {
-            "date": 1727176101373,
-            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/error-sarla-2024-09-24.log",
-            "hash": "5a318f30b6b8afc55b5e40ac0b5a6aca0d9bfe8db415ce465aca6bbf6cde8d77"
+            "date": 1733294898545,
+            "name": "/home/hp/Documents/Uptake/Sarla/SarlaPLCBackend/logs/errors/error-sarla-2024-12-04.log",
+            "hash": "2f2caa02be625b00f83e0cad61066316348f50e1fe3499d54d6736537148f7ad"
         }
     ],
     "hashType": "sha256"

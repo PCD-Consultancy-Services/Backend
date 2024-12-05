@@ -168,6 +168,24 @@ const deleteMasterTemplate = asyncHandler(async (req, res) => {
     "Master template deleted successfully."
   );
 });
+const searchChemicals = asyncHandler(async (req, res) => {
+  let { q, page = 1, pageSize = 10 } = req.query;
+  const options = getOffset(page, pageSize);
+
+  let filter = {};
+  if (q) {
+    filter = { name: new RegExp(q, "i") };
+  }
+
+  const chemicals = await chemicalServices.searchChemicals(filter, options);
+
+  sendSuccessResponse(
+    httpStatus.OK,
+    res,
+    "Data fetched successfully.",
+    chemicals
+  );
+});
 
 module.exports = {
   createMasterTemplate,
@@ -176,4 +194,5 @@ module.exports = {
   getMasterTemplate,
   updateMasterTemplate,
   deleteMasterTemplate,
+  searchChemicals,
 };

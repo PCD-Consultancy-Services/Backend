@@ -14,8 +14,8 @@ const patternsRegex = {
   SHADE_COLOR_REGEX: /^[A-Z$-&_@%]+$/,
 };
 const charLength = {
-  min: 3,
-  max: 50,
+  min: 1,
+  max: 9999,
 };
 const objectId = (value, helpers) => {
   if (!mongoose.Types.ObjectId.isValid(value)) {
