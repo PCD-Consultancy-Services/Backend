@@ -3,7 +3,7 @@ const { modelNames } = require("../config/db.config");
 const { cardBatches, recipeTypes } = require("../config/globalVariables");
 const ScheduleSchema = new mongoose.Schema(
   {
-    piNo: { type: String, trim: true, required: true, unique: true },
+    piNo: { type: String, trim: true, required: true },
     machineId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: modelNames.Machine,
